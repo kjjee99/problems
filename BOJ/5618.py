@@ -7,4 +7,4 @@ else:
 for a in li:
     for i in range(1, max(li)):
         if a % i == 0:
-            print(i)
+            print(a)
