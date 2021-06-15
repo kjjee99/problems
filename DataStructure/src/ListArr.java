@@ -69,7 +69,8 @@ public class ListArr {
 		la.LInsert(22);
 		la.LInsert(22);
 		la.LInsert(33);
-		
+		la.LInsert(423);
+
 		//리스트 저장
 		list = la.LGet();
 		
@@ -84,6 +85,7 @@ public class ListArr {
 		
 		//리스트 데이터 찾기
 		la.LFind(33);
+		
 		
 		//리스트 출력
 		for(int i = 0; i < la.LCount(list); i++)
