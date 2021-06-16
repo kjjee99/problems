@@ -1,17 +1,15 @@
 public class ListArr {
 	
 	static int LISTLEN = 100;
-	private int[] pList = new int[LISTLEN];
+	private Object[] pList = new Object[LISTLEN];
 	private int numOfData;
-	private int curPosition;			//커서 확인
 	
 	
 	public ListArr() {		//리스트 초기화
 		numOfData = 0;		//데이터 입력값 개수
-		curPosition = -1;	//커서 위치
 	}
 	
-	public void LInsert(int data) {		//리스트에 데이터 삽입
+	public void LInsert(Object data) {		//리스트에 데이터 삽입
 		
 		if(numOfData >= LISTLEN) {		//리스트 용량 초과시
 			System.out.println("save unavailable");
@@ -22,45 +20,58 @@ public class ListArr {
 		numOfData++;					//데이터 개수 증가
 	}
 	
-	public void LRemove(int data) {		//리스트 데이터 삭제
-		int rpos = 0;
-		int num = numOfData;
-		int i = 0;
+	public void LRemove(Object data) {		//리스트 데이터 삭제
+		Object[] arr = pList;
 		
-		int[] arr = pList;
-		
-		for(i = rpos; i<num-1; i++) {
-			if(data == pList[i])
+		for(int i = 0; i<numOfData-1; i++) {
+			if(data == pList[i]) {
 				pList[i] = pList[i+1];
+				while(i+1 != numOfData) {
+					i++;
+					pList[i] = pList[i+1];
+				}
+			}
 		}
 		
 		numOfData--;
-		rpos = curPosition;
 		pList = arr;
 		return;
 	}
 	
-	public void LAdd(int index, int data) {		//리스트 중간에 데이터 추가
+	public void LAdd(int index, Object data) {		//리스트 중간에 데이터 추가
+		for(int i = numOfData; i > index; i--) {
+			pList[i] = pList[i-1];
+		}
 		
+		pList[index] = data;
+		numOfData++;
+		return;
 	}
 	
-	public int LFind(int data) {				//리스트 데이터 찾기
-		int index = 0;
+	public void LFind(Object data) {				//리스트 데이터 찾기
+		int index = -1;
 		
-		return index;
+		for(int i = 0; i < numOfData; i++) {
+			if(pList[i] == data)
+				index = i + 1;
+		}
+		if(index == -1)
+			System.out.println(data+"가 존재하지 않습니다.");
+		else
+			System.out.println(data+"의 위치는 "+index);
 	}
 	
-	public int[] LGet() {						//리스트 반환
+	public Object[] LGet() {						//리스트 반환
 		return pList;
 	}
 	
-	public int LCount(int[] list) {				//리스트 데이터 개수
+	public int LCount(Object[] list) {				//리스트 데이터 개수
 		return numOfData;
 	}
 	
 	
 	public static void main(String[] args) {
-		int[] list;
+		Object[] list;
 		ListArr la = new ListArr();
 		
 		//데이터 삽입
@@ -84,12 +95,13 @@ public class ListArr {
 		la.LAdd(2, 55);
 		
 		//리스트 데이터 찾기
-		la.LFind(33);
-		
+		la.LFind(44);
 		
 		//리스트 출력
+		System.out.println("List");
 		for(int i = 0; i < la.LCount(list); i++)
-			System.out.println(list[i]);
+			System.out.print(list[i]+" ");
+		System.out.println();
 		
 		System.out.print("현재 데이터의 수 : "+la.LCount(list));
 		
