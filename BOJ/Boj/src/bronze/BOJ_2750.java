@@ -1,5 +1,7 @@
 package bronze;
 
+//오름차순 정렬
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

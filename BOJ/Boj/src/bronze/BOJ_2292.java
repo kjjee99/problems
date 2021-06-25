@@ -1,5 +1,7 @@
 package bronze;
 
+//육각형으로 이루어진 집에 번호 매기기
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

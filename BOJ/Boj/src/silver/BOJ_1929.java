@@ -1,5 +1,6 @@
 package silver;
 
+//소수찾기
 
 /*
  * https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4

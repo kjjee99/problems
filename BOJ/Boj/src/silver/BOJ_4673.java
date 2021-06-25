@@ -1,6 +1,8 @@
 //수정必
 package silver;
 
+//셀프넘버
+
 import java.io.IOException;
 
 public class BOJ_4673 {

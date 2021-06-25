@@ -1,4 +1,7 @@
 package bronze;
+
+//5와 3으로 최소로 나누기
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

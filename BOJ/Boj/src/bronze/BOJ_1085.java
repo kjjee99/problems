@@ -1,5 +1,7 @@
 package bronze;
 
+//테두리에 더 가까운 거리
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
