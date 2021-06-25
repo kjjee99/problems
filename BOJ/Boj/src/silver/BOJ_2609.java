@@ -14,7 +14,19 @@ public class BOJ_2609 {
 		int a = Integer.parseInt(st.nextToken());
 		int b = Integer.parseInt(st.nextToken());
 		
+		int gcd = 1, lcm = 1;
+		int i = 2;
 		
+		while(i <= a && i <= b) {
+			if(a % i == 0 && b % i == 0) {
+				gcd = i;
+			}
+			i++;
+		}
+		
+		lcm = (a * b) / gcd;
+		System.out.println(gcd);
+		System.out.println(lcm);
 		
 	}
 
