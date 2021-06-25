@@ -1,5 +1,7 @@
 package silver;
 
+//최소공배수와 최대공약수
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
