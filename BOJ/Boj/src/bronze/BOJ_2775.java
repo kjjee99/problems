@@ -1,5 +1,7 @@
 package bronze;
 
+//k층 n호에 거주하려면 (k-1)층 1호~n호까지의 주민의 합을 데려와야 함.
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
