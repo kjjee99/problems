@@ -31,9 +31,9 @@ public class BOJ_11050 {
 	}
 	
 	//동적계획법(Bottom-up)
-	static int[][] dp = new int[10][10];
 	public static int binomial(int n, int r) {
 		int i= 0, j = 0;
+		int[][] dp = new int[n + 1][r + 1];
 		for(i = 0; i <= n; i++) {
 			for(j = 0; j <= Math.min(i, r); j++) {
 				if(j == 0 || j == i)	dp[i][j] = 1;
