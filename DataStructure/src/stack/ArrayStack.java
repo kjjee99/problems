@@ -1,6 +1,6 @@
 package stack;
 
-public class arrayStack {
+public class ArrayStack {
 	private int[] stackArray = new int[100];	
 	private int topIndex = -1;
 	
@@ -41,7 +41,7 @@ public class arrayStack {
 	}
 	
 	public static void main(String[] args) {
-		arrayStack stack = new arrayStack();
+		ArrayStack stack = new ArrayStack();
 		
 		//비어있는지 확인
 		stack.clear();
