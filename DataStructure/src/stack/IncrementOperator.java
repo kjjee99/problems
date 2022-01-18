@@ -36,8 +36,36 @@ public class IncrementOperator {
 		temp.clear();
 	}
 	
+	public void prefix(String str) {
+		IncrementOperator operator = new IncrementOperator();
+		Stack<Character> stack = new Stack<>();
+		Stack<Character> temporary = new Stack<>();	
+		
+		for(int i = 0; i < str.length(); i++) {
+			int value = operator.getOperator(str.charAt(i));
+			if(value != -1) {
+				if(!stack.isEmpty() 
+						&& operator.compareOperator(stack.get(stack.size() - 1), str.charAt(i)) == -1) {
+					operator.addOperator(stack, temporary);
+				}
+				if(str.charAt(i) != '(')	stack.add(str.charAt(i));
+			}
+			else {
+				if(str.charAt(i) == ')') 	operator.addOperator(stack, temporary);
+				else						temporary.add(str.charAt(i));
+			}
+		}
+		
+		if(!temporary.isEmpty()) 	operator.addOperator(stack, temporary);
+		
+
+		System.out.println("::prefix::");
+		stack.forEach(ch -> System.out.print(ch + " "));
+		System.out.println();
+	}
+	
 	//postfix(후위표기법)
-	public Stack<Character> postfix(String str){
+	public void postfix(String str){
 		IncrementOperator operator = new IncrementOperator();
 		Stack<Character> stack = new Stack<>();
 		Stack<Character> temporary_op = new Stack<>();	
@@ -63,14 +91,14 @@ public class IncrementOperator {
 		System.out.println("::postfix::");
 		stack.forEach(ch -> System.out.print(ch + " "));
 		System.out.println();
-		
-		return stack;
+
 	}
 
 	public static void main(String[] args) {
 		IncrementOperator operator = new IncrementOperator();
-		String str = "(5+3)*4-2";
+		String str = "5/3*(4-2)";
 		
+		operator.prefix(str);
 		operator.postfix(str);
 		
 	}
