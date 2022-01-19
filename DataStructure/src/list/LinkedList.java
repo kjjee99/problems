@@ -1,8 +1,8 @@
 package list;
+
 /*
  * https://opentutorials.org/module/1335/8857 참고
  */
-
 
 public class LinkedList {
 	private Node head;							//첫번째 노드
