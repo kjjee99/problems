@@ -1,6 +1,6 @@
 package queue;
 
-public class TQueue {
+public class LinkedQueue {
 	private Node front = null;
 	private Node rear = null;
 	private int size = 0;
@@ -48,7 +48,7 @@ public class TQueue {
 	}
 	
 	public static void main(String[] args) {
-		TQueue queue = new TQueue();
+		LinkedQueue queue = new LinkedQueue();
 		queue.enqueue(1);
 		queue.enqueue(2);
 		queue.enqueue(3);
