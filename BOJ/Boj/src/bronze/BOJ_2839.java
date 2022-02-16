@@ -8,8 +8,24 @@ import java.io.InputStreamReader;
 
 public class BOJ_2839 {
 	public static BufferedReader sc = new BufferedReader (new InputStreamReader(System.in));
+	
+	//greedy
+	public static void main(String[] args) throws IOException{
+		int sugar = Integer.parseInt(sc.readLine());
+		int bag = 0;
+		while (sugar >= 0) {
+			if(sugar % 5 == 0) {
+				bag += sugar / 5;
+				break;
+			}
+			sugar -= 3;
+			bag++;
+		}
+		if(sugar < 0) 	bag = -1;
+		System.out.println(bag);
+	}
 
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	/*public static void main(String[] args) throws NumberFormatException, IOException {
 		int sugar = Integer.parseInt(sc.readLine());
 		int bag = 0;
 		while (sugar > 0) {
@@ -28,6 +44,6 @@ public class BOJ_2839 {
 			}
 		}
 		System.out.println(bag);
-	}
+	}*/
 
 }
