@@ -17,7 +17,7 @@ public class BOJ_1427 {
 		
 		char[] arr = br.readLine().toCharArray();
 		Arrays.sort(arr);
-		//Arrays.sort(arr, Collections.reversOrder());
+		//Arrays.sort(arr(Integer), Collections.reversOrder());
 		
 		for(int i = arr.length - 1; i >= 0; i--) {
 			System.out.print(arr[i]);
