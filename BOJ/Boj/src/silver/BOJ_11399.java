@@ -56,6 +56,7 @@ public class BOJ_11399 {
 		 * https://st-lab.tistory.com/104
 		 * 
 		 * while(people-- > 0){
+		 * [var-->0 ==> var--;var>0;]
 		 * wait[Intger.parseInt(st.nextToken())]++;
 		 */
 	}
