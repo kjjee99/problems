@@ -40,7 +40,7 @@ public class BOJ_1920 {
 		System.out.println(sb);
 	}
 	
-	public static int binarySearch(int key) {
+	private static int binarySearch(int key) {
 		int lo = 0;					//end of left
 		int hi = arr.length - 1;	//end of right
 		
