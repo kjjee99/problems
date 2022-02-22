@@ -1,5 +1,9 @@
 package silver;
 
+/*
+ * 타일채우기
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
