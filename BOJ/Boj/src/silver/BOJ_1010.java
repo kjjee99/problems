@@ -15,12 +15,11 @@ public class BOJ_1010 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int loop = Integer.parseInt(br.readLine());
-		while(loop > 0) {
+		while(loop-- > 0) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			int a = Integer.parseInt(st.nextToken());
 			int b = Integer.parseInt(st.nextToken());
 			System.out.println(combi(b, a));
-			loop--;
 		}
 	}
 	
