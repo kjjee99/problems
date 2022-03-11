@@ -28,12 +28,13 @@ public class BOJ_3036 {
 		}
 	}
 	private static int fraction(int a, int b) {
-		while(true) {
+		while(b != 0) {
 			int temp = a % b;
-			if(temp == 0) 	return b;
+//			if(temp == 0) 	return b;
 			a = b;
 			b = temp;
 		}
+		return a;
 	}
 
 }
