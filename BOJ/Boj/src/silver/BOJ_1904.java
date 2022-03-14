@@ -14,17 +14,21 @@ public class BOJ_1904 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
-		int result[] = new int[N + 1];
-		
+		//n+1로 하면 인덱스에러
+		int result[] = new int[N + 10];
+
 		result[0] = 0;
 		result[1] = 1;
 		result[2] = 2;
-		
-		for(int i = 3; i <= N; i++) {
-			result[i] = (result[i - 1] + result[i - 2]) % 15746;
+
+		if (N <= 2)
+			System.out.println(result[N]);
+		else {
+			for (int i = 3; i <= N; i++) {
+				result[i] = (result[i - 1] + result[i - 2]) % 15746;
+			}
+			System.out.println(result[N]);
 		}
-		System.out.println(result[N]);
 	}
-	
 
 }
