@@ -1,4 +1,7 @@
 package silver;
+/*
+ * 최대 힙
+ */
 
 import java.io.BufferedReader;
 import java.io.IOException;

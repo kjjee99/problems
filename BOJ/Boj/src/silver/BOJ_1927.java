@@ -1,5 +1,9 @@
 package silver;
 
+/*
+ * 최소 힙
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
