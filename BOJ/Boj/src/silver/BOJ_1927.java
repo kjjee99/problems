@@ -20,7 +20,6 @@ public class BOJ_1927 {
 				continue;
 			}
 			queue.add(input);
-			
 		}
 	}
 
