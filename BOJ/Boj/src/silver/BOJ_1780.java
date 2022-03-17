@@ -1,5 +1,10 @@
 package silver;
 
+/*
+ * 색종이를 3분할하기
+ * 분할정복
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
