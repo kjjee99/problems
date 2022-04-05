@@ -12,7 +12,6 @@ import java.util.StringTokenizer;
 
 public class BOJ_1021 {
 	private static LinkedList<Integer> q = new LinkedList<>();
-	private static int[] arr;
 	private static int cnt = 0;
 
 	public static void main(String[] args) throws IOException{
