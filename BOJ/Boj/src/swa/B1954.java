@@ -16,9 +16,9 @@ public class B1954 {
 			
 			int size = N;
 			int cnt = 1;
-			int right = -1;
-			int bottom = 0;
-			int top = 1;
+			int right = -1;	//오른쪽 방향
+			int bottom = 0;	//아래 방향
+			int top = 1;	//방향의 반전
 			/*
 			 * int row = 0, col = 0; int width = N; int height = N - 1; while(cnt <= N * N)
 			 * { for(int k = 0; k < width; k++) { snail[row][col] = cnt; col++; cnt++; }
@@ -31,13 +31,13 @@ public class B1954 {
 			 * }
 			 */
 			while(cnt <= N * N) {
-				for(int col = 0; col < size; col++) {
+				for(int k = 0; k < size; k++) {
 					right += top;
 					snail[bottom][right] = cnt;
 					cnt++;
 				}
 				size--;
-				for(int col = 0; col < size; col++) {
+				for(int k = 0; k < size; k++) {
 					bottom += top;
 					snail[bottom][right] = cnt;
 					cnt++;
