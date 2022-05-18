@@ -21,8 +21,8 @@ public class B1986 {
 		dp[0] = 0;
 		dp[1] = 1;
 		for(int i = 2; i < 11; i++) {
-			if(i % 2 == 0) 	dp[i] = dp[i - 1] + i;
-			else 			dp[i] = dp[i - 1] - i;
+			if(i % 2 == 0) 	dp[i] = dp[i - 1] - i;
+			else 			dp[i] = dp[i - 1] + i;
 		}
 	}
 
