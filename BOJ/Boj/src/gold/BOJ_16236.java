@@ -11,7 +11,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BOJ_3190 {
+public class BOJ_16236 {
 	private static int[][] map;
 	// 상 좌 하 우
 	private static int[] dx = {-1, 0, 1, 0};
