@@ -1,5 +1,7 @@
 package swa;
 
+/* 디저트 카페 */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
