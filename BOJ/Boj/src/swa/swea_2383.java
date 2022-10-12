@@ -1,5 +1,7 @@
 package swa;
 
+/* 점심 식사시간 */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -41,7 +43,7 @@ public class swea_2383 {
 			min = Integer.MAX_VALUE;
 			selected = new boolean[people.size()];
 			comb(0);
-			System.out.println(min);
+			System.out.println("#"+tc+" "+min);
 		}
 	}
 
@@ -85,35 +87,6 @@ public class swea_2383 {
 		while (true) {
 			if (cnt == 0)	break; // 모든 사람이 다 내려갔을 때 종료
 
-			for (int i = 0; i < stair1.size(); i++) {
-				int[] person = stair1.get(i);
-				int dep = person[2] - 1;
-				if (dep == 0) {
-					if (q1.size() > 3)
-						w1.add(new int[] { i, s1 });
-					else
-						q1.add(new int[] { i, s1 });
-					stair1.remove(i);
-					i--;
-				} else {
-					stair1.set(i, new int[] { person[0], person[1], dep });
-				}
-			}
-			for (int i = 0; i < stair2.size(); i++) {
-				int[] person = stair2.get(i);
-				int dep = person[2] - 1;
-				if (dep == 0) {
-					if (q2.size() > 3)
-						w2.add(new int[] { i, s2 });
-					else
-						q2.add(new int[] { i, s2 });
-					stair2.remove(i);
-					i--;
-				} else {
-					stair2.set(i, new int[] { person[0], person[1], dep });
-				}
-			}
-
 			for (int i = 0; i < q1.size(); i++) {
 				int[] person = q1.poll();
 				int dep = person[1] - 1;
@@ -134,13 +107,46 @@ public class swea_2383 {
 				}
 				q2.add(new int[] { i, dep });
 			}
-
 			while (q1.size() < 3 && !w1.isEmpty()) {
 				q1.add(w1.poll());
 			}
 			while (q2.size() < 3 && !w2.isEmpty()) {
 				q2.add(w2.poll());
 			}
+
+			for (int i = 0; i < stair1.size(); i++) {
+				int[] person = stair1.get(i);
+				int dep = person[2] - 1;
+				if (dep == 0) {
+					if (q1.size() == 3) {
+						w1.add(new int[] { i, s1 });
+					}
+					else {
+						q1.add(new int[] { i, s1 });
+					}
+					stair1.remove(i);
+					i--;
+				} else {
+					stair1.set(i, new int[] { person[0], person[1], dep });
+				}
+			}
+			for (int i = 0; i < stair2.size(); i++) {
+				int[] person = stair2.get(i);
+				int dep = person[2] - 1;
+				if (dep == 0) {
+					if (q2.size() == 3) {
+						w2.add(new int[] { i, s2 });
+					}
+					else {
+						q2.add(new int[] { i, s2 });
+					}
+					stair2.remove(i);
+					i--;
+				} else {
+					stair2.set(i, new int[] { person[0], person[1], dep });
+				}
+			}
+
 			time++;
 		}
 		return time;
